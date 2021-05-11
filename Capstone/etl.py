@@ -33,7 +33,7 @@ def process_i94_data(spark, input_data, output_data):
         
     Parameters:
         spark: Spark session object
-        input_data: S3 object where user song data is stored
+        input_data: S3 object where the i94 data is stored
         output_data: S3 object to save newly formatted data tables to
     
     """
@@ -101,7 +101,7 @@ def process_demographic_data(spark, input_data, output_data):
         
     Parameters:
         spark: Spark session object
-        input_data: S3 object where user song data is stored
+        input_data: S3 object where US cities demographic data is stored
         output_data: S3 object to save newly formatted data tables to
     
     """
@@ -155,11 +155,11 @@ def process_airport_data(spark, input_data, output_data):
     Description:
         Reads in airpot data from S3,
         Formats data into a table,
-        and then stores those data tables back into S3 as parquet files
+        and then stores that data table bac into S3 as parquet files
         
     Parameters:
         spark: Spark session object
-        input_data: S3 object where user song data is stored
+        input_data: S3 object where the airport data is stored
         output_data: S3 object to save newly formatted data tables to
     
     """
