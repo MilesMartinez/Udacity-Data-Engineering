@@ -2,7 +2,7 @@
 This database enables Sparkify to easily query the data they collect from the users of their music streaming service for analysis. Before establishing the database, the data was previously available only in its raw form as JSON logs stored on the app. By aggregating all the user data into a centralized database in an organized format, Sparkify can easily conduct queries for their analysis. In this case, they are interested in understanding what songs users are listening to.
 # Design
 ### Schema
-The table of interest is  the *songplays* table, which leverages data from the following 4 other tables:
+The table of interest is the *songplays* dimension table, which leverages data from the following 4 fact other tables:
 * *songs*
 * *users*
 * *artists*
