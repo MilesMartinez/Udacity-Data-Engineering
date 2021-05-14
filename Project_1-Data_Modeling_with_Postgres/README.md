@@ -2,14 +2,14 @@
 This database enables Sparkify to easily query the data they collect from the users of their music streaming service for analysis. Before establishing the database, the data was previously available only in its raw form as JSON logs stored on the app. By aggregating all the user data into a centralized database in an organized format, Sparkify can easily conduct queries for their analysis. In this case, they are interested in understanding what songs users are listening to.
 # Design
 ## Schema
-The table of interest is the *songplays* fact table, which leverages data from the following 4 other dimension tables:
+
+There is one centralized table of interest, the *songplays* table, which references data from the following 4 other tables:
 * *songs*
 * *users*
 * *artists*
 * *time*
 
-The *songplays* table referes to some of these values by a unique ID. We use IDs, and not a direct referrence (i.e. the actual name of the artist, user, or song) so that if were to ever want to change, for example, an artist name, we do not have to update ever single row in the *songplays* and the *songs* table with the new artist name. We simply update one name in the *artists* table and the ID of the artist stays the same.
-
+The *songplays* table references the values in the other tables via a unique ID. We use IDs, and not a direct referrence (i.e. the actual name of the artist, user, or song). This is so if were to ever want to update an artist name for example, we do not have to update every single row in the *songplays* and the *songs* table with the new artist name. We simply update ONE name in the *artists* table and the reference ID of the artist stays the same in every row of the other tables.
 
 ## ETL Pipeline
 The ETL pipeline conducts the following 3 things to build the database:
